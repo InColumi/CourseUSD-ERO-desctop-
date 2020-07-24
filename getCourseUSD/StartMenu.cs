@@ -49,11 +49,6 @@ namespace getCourseUSD
             labelPercent.Text = $"{sign}{course.Difference.ToString("N1")}%";
         }
 
-        private void labelExit_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
         private Course GetCourseByName(string name)
         {
             using (WebClient client = new WebClient())
@@ -94,6 +89,11 @@ namespace getCourseUSD
         private void StartMenu_Shown(object sender, EventArgs e)
         {
             UpdateAllCurrency();
+        }
+
+        private void labelExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

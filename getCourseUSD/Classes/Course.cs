@@ -20,7 +20,20 @@ namespace getCourseUSD.Classes
         {
             Current = current;
             Previous = previous;
-            Difference = current / previous;
+            FindDifference();
+        }
+
+        private void FindDifference()
+        {
+            if (Current > Previous)
+            {
+                Difference = Previous / Current;
+            }
+            else
+            {
+                Difference = Current / Previous;
+            }
+            
         }
 
         public override string ToString()

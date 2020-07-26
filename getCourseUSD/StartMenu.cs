@@ -1,14 +1,7 @@
 ﻿using getCourseUSD.Classes;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
-using System.Linq;
 using System.Net;
-using System.Text;
-using System.Threading;
-using System.Threading.Tasks;
 using System.Web.Helpers;
 using System.Windows.Forms;
 
@@ -16,7 +9,6 @@ namespace getCourseUSD
 {
     public partial class StartMenu : Form
     {
-        private string _apiPathForUsdAndEUR = "https://www.cbr-xml-daily.ru/daily_json.js";
         private Course _courseUSD;
         private Course _courseEUR;
         private Course _courseMonero;
@@ -46,14 +38,14 @@ namespace getCourseUSD
 
             labelPercent.ForeColor = (isPossitive) ? Color.Green : Color.Red;
 
-            labelPercent.Text = $"{sign}{course.Difference.ToString("N1")}%";
+            labelPercent.Text = $"{course.DifferenceValue.ToString("N2")} / {sign}{course.DifferenceInPersent.ToString("N1")}%";
         }
 
-        private Course GetCourseByName(string name)
+        private Course GetCourseByName(string name, string apiPathForUsdAndEUR = "https://www.cbr-xml-daily.ru/daily_json.js")
         {
             using (WebClient client = new WebClient())
             {
-                string courses = client.DownloadString(_apiPathForUsdAndEUR);
+                string courses = client.DownloadString(apiPathForUsdAndEUR);
                 var decodeCourses = Json.Decode(courses);
 
                 var info = decodeCourses["Valute"][name];
@@ -89,11 +81,23 @@ namespace getCourseUSD
         private void StartMenu_Shown(object sender, EventArgs e)
         {
             UpdateAllCurrency();
+            labelTime.Text = GetCurrentTime();
         }
 
-        private void labelExit_Click(object sender, EventArgs e)
+        private string GetCurrentTime()
+        {
+            return DateTime.Now.ToString("hh:mm tt");
+        }
+
+        private void labelExit_Click_1(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void buttonUpdate_Click(object sender, EventArgs e)
+        {
+            UpdateAllCurrency();
+            labelTime.Text = GetCurrentTime();
         }
     }
 }

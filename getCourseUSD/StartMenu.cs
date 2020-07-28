@@ -2,6 +2,8 @@
 using System;
 using System.Drawing;
 using System.Net;
+using System.Threading;
+using System.Threading.Tasks;
 using System.Web.Helpers;
 using System.Windows.Forms;
 
@@ -11,19 +13,15 @@ namespace getCourseUSD
     {
         private Course _courseUSD;
         private Course _courseEUR;
-        private Course _courseMonero;
-        private Course _courseBitcoin;
 
         public StartMenu()
         {
             InitializeComponent();
             _courseUSD = new Course();
             _courseEUR = new Course();
-            _courseMonero = new Course();
-            _courseBitcoin = new Course();
         }
 
-        private void UpdateLabelValue(Label labelValue,  Course course)
+        private void UpdateLabelValue(Label labelValue, Course course)
         {
             labelValue.Text = course.Current.ToString("N2");
         }
@@ -57,7 +55,7 @@ namespace getCourseUSD
             }
         }
 
-        private void UpdateAllCurrency()
+        private bool TryUpdateAllCurrency()
         {
             try
             {
@@ -69,19 +67,30 @@ namespace getCourseUSD
                 UpdateLabelValue(labelEuroValue, _courseEUR);
                 UpdateLabelPercent(labelEuroPerсent, _courseEUR);
 
-                
+                return true;
             }
             catch (Exception ex)
             {
                 MessageBox.Show(ex.Message);
+                return false;
+            }
+        }
+
+        private void UpdateAllCurrensy()
+        {
+            if (TryUpdateAllCurrency())
+            {
+                labelTime.Text = GetCurrentTime();
+            }
+            else
+            {
                 Application.Exit();
             }
         }
 
         private void StartMenu_Shown(object sender, EventArgs e)
         {
-            UpdateAllCurrency();
-            labelTime.Text = GetCurrentTime();
+            UpdateAllCurrensy();
         }
 
         private string GetCurrentTime()
@@ -89,15 +98,34 @@ namespace getCourseUSD
             return DateTime.Now.ToString("hh:mm tt");
         }
 
-        private void labelExit_Click_1(object sender, EventArgs e)
-        {
-            Application.Exit();
-        }
-
         private void buttonUpdate_Click(object sender, EventArgs e)
         {
-            UpdateAllCurrency();
-            labelTime.Text = GetCurrentTime();
+            UpdateAllCurrensy();
+        }
+
+        private const int WM_NCHITTEST = 0x84;
+        private const int HTCLIENT = 0x1;
+        private const int HTCAPTION = 0x2;
+
+        protected override void WndProc(ref Message m)
+        {
+            switch (m.Msg)
+            {
+                case WM_NCHITTEST:
+                    base.WndProc(ref m);
+                    if ((int)m.Result == HTCLIENT)
+                    {
+                        m.Result = (IntPtr)HTCAPTION;
+                        return;
+                    }
+                    break;
+            }
+            base.WndProc(ref m);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

@@ -30,16 +30,10 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
             this.labelDollarUSValue = new System.Windows.Forms.Label();
-            this.labelMoneroValue = new System.Windows.Forms.Label();
-            this.labelBitcoinValue = new System.Windows.Forms.Label();
             this.labelDollarUSPerсent = new System.Windows.Forms.Label();
             this.labelEuroValue = new System.Windows.Forms.Label();
-            this.labelBitcoinPerсent = new System.Windows.Forms.Label();
             this.labelEuroPerсent = new System.Windows.Forms.Label();
-            this.labelMoneroPersent = new System.Windows.Forms.Label();
             this.labelTime = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -73,32 +67,6 @@
             this.label3.TabIndex = 0;
             this.label3.Text = "Euro";
             // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.BackColor = System.Drawing.Color.Transparent;
-            this.label4.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(13, 181);
-            this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(90, 25);
-            this.label4.TabIndex = 0;
-            this.label4.Text = "Monero";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.BackColor = System.Drawing.Color.Transparent;
-            this.label5.Font = new System.Drawing.Font("Century Gothic", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(13, 206);
-            this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(79, 25);
-            this.label5.TabIndex = 0;
-            this.label5.Text = "Bitcoin";
-            // 
             // labelDollarUSValue
             // 
             this.labelDollarUSValue.AutoSize = true;
@@ -111,32 +79,6 @@
             this.labelDollarUSValue.Size = new System.Drawing.Size(98, 38);
             this.labelDollarUSValue.TabIndex = 0;
             this.labelDollarUSValue.Text = "00.00";
-            // 
-            // labelMoneroValue
-            // 
-            this.labelMoneroValue.AutoSize = true;
-            this.labelMoneroValue.BackColor = System.Drawing.Color.Transparent;
-            this.labelMoneroValue.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold);
-            this.labelMoneroValue.ForeColor = System.Drawing.Color.White;
-            this.labelMoneroValue.Location = new System.Drawing.Point(222, 167);
-            this.labelMoneroValue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelMoneroValue.Name = "labelMoneroValue";
-            this.labelMoneroValue.Size = new System.Drawing.Size(98, 38);
-            this.labelMoneroValue.TabIndex = 0;
-            this.labelMoneroValue.Text = "00.00";
-            // 
-            // labelBitcoinValue
-            // 
-            this.labelBitcoinValue.AutoSize = true;
-            this.labelBitcoinValue.BackColor = System.Drawing.Color.Transparent;
-            this.labelBitcoinValue.Font = new System.Drawing.Font("Century Gothic", 24F, System.Drawing.FontStyle.Bold);
-            this.labelBitcoinValue.ForeColor = System.Drawing.Color.White;
-            this.labelBitcoinValue.Location = new System.Drawing.Point(222, 208);
-            this.labelBitcoinValue.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelBitcoinValue.Name = "labelBitcoinValue";
-            this.labelBitcoinValue.Size = new System.Drawing.Size(98, 38);
-            this.labelBitcoinValue.TabIndex = 0;
-            this.labelBitcoinValue.Text = "00.00";
             // 
             // labelDollarUSPerсent
             // 
@@ -165,19 +107,6 @@
             this.labelEuroValue.TabIndex = 0;
             this.labelEuroValue.Text = "00.00";
             // 
-            // labelBitcoinPerсent
-            // 
-            this.labelBitcoinPerсent.AutoSize = true;
-            this.labelBitcoinPerсent.BackColor = System.Drawing.Color.Transparent;
-            this.labelBitcoinPerсent.Font = new System.Drawing.Font("Rockwell", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelBitcoinPerсent.ForeColor = System.Drawing.Color.White;
-            this.labelBitcoinPerсent.Location = new System.Drawing.Point(328, 208);
-            this.labelBitcoinPerсent.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelBitcoinPerсent.Name = "labelBitcoinPerсent";
-            this.labelBitcoinPerсent.Size = new System.Drawing.Size(72, 23);
-            this.labelBitcoinPerсent.TabIndex = 0;
-            this.labelBitcoinPerсent.Text = "+0.0%";
-            // 
             // labelEuroPerсent
             // 
             this.labelEuroPerсent.AutoSize = true;
@@ -191,19 +120,6 @@
             this.labelEuroPerсent.TabIndex = 0;
             this.labelEuroPerсent.Text = "0.00 / +0.0%";
             this.labelEuroPerсent.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // labelMoneroPersent
-            // 
-            this.labelMoneroPersent.AutoSize = true;
-            this.labelMoneroPersent.BackColor = System.Drawing.Color.Transparent;
-            this.labelMoneroPersent.Font = new System.Drawing.Font("Rockwell", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelMoneroPersent.ForeColor = System.Drawing.Color.White;
-            this.labelMoneroPersent.Location = new System.Drawing.Point(328, 182);
-            this.labelMoneroPersent.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.labelMoneroPersent.Name = "labelMoneroPersent";
-            this.labelMoneroPersent.Size = new System.Drawing.Size(72, 23);
-            this.labelMoneroPersent.TabIndex = 0;
-            this.labelMoneroPersent.Text = "+0.0%";
             // 
             // labelTime
             // 
@@ -240,7 +156,7 @@
             this.buttonUpdate.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(64)))), ((int)(((byte)(64)))));
             this.buttonUpdate.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.buttonUpdate.ForeColor = System.Drawing.Color.White;
-            this.buttonUpdate.Location = new System.Drawing.Point(172, 266);
+            this.buttonUpdate.Location = new System.Drawing.Point(172, 153);
             this.buttonUpdate.Name = "buttonUpdate";
             this.buttonUpdate.Size = new System.Drawing.Size(75, 29);
             this.buttonUpdate.TabIndex = 4;
@@ -262,25 +178,20 @@
             this.button1.TabIndex = 5;
             this.button1.Text = "X";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // StartMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 17F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Black;
-            this.ClientSize = new System.Drawing.Size(419, 301);
+            this.ClientSize = new System.Drawing.Size(419, 190);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.buttonUpdate);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.labelBitcoinValue);
-            this.Controls.Add(this.labelMoneroValue);
             this.Controls.Add(this.labelEuroValue);
-            this.Controls.Add(this.labelMoneroPersent);
             this.Controls.Add(this.labelEuroPerсent);
-            this.Controls.Add(this.labelBitcoinPerсent);
             this.Controls.Add(this.labelDollarUSPerсent);
             this.Controls.Add(this.labelDollarUSValue);
             this.Controls.Add(this.labelTime);
@@ -288,7 +199,7 @@
             this.Controls.Add(this.label1);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Century Gothic", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "StartMenu";
             this.ShowIcon = false;
@@ -304,16 +215,10 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label labelDollarUSValue;
-        private System.Windows.Forms.Label labelMoneroValue;
-        private System.Windows.Forms.Label labelBitcoinValue;
         private System.Windows.Forms.Label labelDollarUSPerсent;
         private System.Windows.Forms.Label labelEuroValue;
-        private System.Windows.Forms.Label labelBitcoinPerсent;
         private System.Windows.Forms.Label labelEuroPerсent;
-        private System.Windows.Forms.Label labelMoneroPersent;
         private System.Windows.Forms.Label labelTime;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
